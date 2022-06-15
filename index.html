@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+
+    The path provided below has to start and end with a slash "/" in order for
+    it to work correctly.
+
+    Fore more details:
+    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
+  -->
+  <base href="/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="A new Flutter project.">
+
+  <!-- iOS meta tags & icons -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="admin">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="logosws2.png" />
+
+  <title>SWS Admin</title>
+  <link rel="manifest" href="manifest.json">
+  <!-- Styling for loading indicator -->
+  <style>
+    .container {
+      width: 250vw;
+      height: 250vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffffff;
+    }
+
+    .indicator {
+      width: 10vw;
+    }
+  </style>
+
+</head>
+
+<body style="overflow: hidden">
+  <!-- Loading Indicator -->
+  <div id="loading_container" class="container">
+    <img src="./assets/logosws2.png" alt="loading indicator" class="indicator">
+  </div>
+  <!-- This script installs service_worker.js to provide PWA functionality to
+       application. For more information, see:
+       https://developers.google.com/web/fundamentals/primers/service-workers -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js?v=3986042049');
+      });
+    }
+  </script>
+<!--  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>-->
+<!--  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>-->
+<!--  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>-->
+<!--  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>-->
+<!--  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-app.js"></script>-->
+<!--  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-firestore.js"></script>-->
+<!--  <script src="https://www.gstatic.com/firebasejs/7.22.1/firebase-analytics.js"></script>-->
+  <script>
+    window.onload = function () {
+      setTimeout(function () {
+        var loadingIndicator = document.getElementById("loading_container");
+        if (loadingIndicator) {
+          loadingIndicator.remove();
+        }
+      }, 10000)
+    }
+  </script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-messaging.js"></script>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <script>
+  if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function () {
+        navigator.serviceWorker.register("/firebase-messaging-sw.js");
+      });
+    }
+    </script>
+  <script>
+   const firebaseConfig = {
+  apiKey: "AIzaSyBcoHFA4REoKb3y2M4s6Zypqbt6JAof1KA",
+  authDomain: "swsu-8aeff.firebaseapp.com",
+  databaseURL: "https://swsu-8aeff-default-rtdb.firebaseio.com",
+  projectId: "swsu-8aeff",
+  storageBucket: "swsu-8aeff.appspot.com",
+  messagingSenderId: "648956499485",
+  appId: "1:648956499485:web:ff2ce2fd361f294eeb58f4",
+  measurementId: "G-2PDQY9WBQD"
+   };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="main.dart.js" type="application/javascript"></script>
+  <!-- Removes the loading indicator after 10 seconds -->
+
+
+</body>
+
+</html>
